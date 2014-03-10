@@ -13,6 +13,19 @@ class ArtData:
     # Get a file-like object for the Python Web site's home page.
     values = []
     months = []
+    for i in range(1,13):
+      if i < 10:
+        yearmonth = "20130" + str(i)
+      else:
+        yearmonth = "2013" + str(i)
+      website = "http://stats.grok.se/en/" + yearmonth + "/" + self.artistname 
+      f = urllib.urlopen(website)
+      s = f.read()
+      regex = re.compile("has been viewed (\d*)")
+      r = regex.search(s)
+      values.append(int(r.groups()[0]))
+      months.append(yearmonth)
+      f.close()
     for i in range(1,4):  
       yearmonth = "20140" + str(i)
       website = "http://stats.grok.se/en/" + yearmonth + "/" + self.artistname 
@@ -24,6 +37,7 @@ class ArtData:
       months.append(yearmonth)
       f.close()
     print values
+    print months
 
   def googletrends(self):
     self.getGTData(self.artistname)
@@ -44,6 +58,8 @@ class ArtData:
   def getGTData(self, search_query = "debt", date="all", geo="all", scale="1", position = "end" ):
     print search_query
     dict = {}
+    endlist = []
+    countlist = []
     connector = pyGTrends( "larotondeapi", "dstegroup")
     connector.download_report( ( search_query ) 
            , date = date
@@ -62,9 +78,13 @@ class ArtData:
           try:
             count = int(item[1])
             dict[enddate] = count
+            endlist.append(enddate[5:])
+            countlist.append(count)
           except:
             break
     print dict
+    print endlist[-62:]
+    print countlist[-62:]
 
 
       # data = connector.csv( section='Main' ).split('\n')
@@ -113,7 +133,7 @@ class ArtData:
 
 x = ArtData("Andy Warhol")
 # x.wikipedia()
-# x.googletrends()
+x.googletrends()
 x.instagram()
 y = ArtData("Gerhard Richter")
 # y.wikipedia()
