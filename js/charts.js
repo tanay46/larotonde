@@ -66,6 +66,43 @@ $(function () {
                 data: [31, 40, 36, 37, 38, 38, 37, 36, 37, 36, 35, 42, 41, 38, 39, 40, 41, 40, 38, 39, 36, 36, 36, 33, 31, 29, 28, 29, 26, 25, 26, 44, 28, 29, 31, 29, 32, 32, 32, 33, 38, 35, 35, 58, 43, 50, 41, 36, 41, 41, 51, 36, 33, 37, 39, 39, 39, 39, 35, 35, 34, 33]
             },]
 });
-    
+
+        $('#fb').highcharts({
+            title: {
+                text: 'Facebook Trends',
+                x: -20 //center
+            },
+            xAxis: {
+                title: {
+                    text: 'Month'
+                },
+                categories: ['Apr-13', 'May-13', 'Jun-13', 'Jul-13', 'Aug-13', 'Sep-13', 'Oct-13', 'Nov-13', 'Dec-13', 'Jan-14', 'Feb-14', 'Mar-14']
+            },
+            yAxis: {
+                title: {
+                    text: ' Users'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: ' Number of Likes (This Month)',
+                data: [3067, 3500, 2593, 3924, 4908, 2566, 4901, 3872, 3326, 5623, 4470]
+            },{
+                name: ' People Talking About This (This Month)',
+                data: [11776, 7838, 9852, 14585, 11477, 6637, 12560, 13344, 7205, 22188, 12007]
+            }]
+
+});
+ 
     });
     
