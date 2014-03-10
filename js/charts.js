@@ -103,6 +103,47 @@ $(function () {
             }]
 
 });
+
+        $('#auction').highcharts({
+            title: {
+                text: 'Most Recent Auctions',
+                x: -20 //center
+            },
+            xAxis: {
+                title: {
+                    text: 'Work'
+                },
+                categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+            },
+            yAxis: {
+                title: {
+                    text: ' Price'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: ' Estimated Minimum',
+                data: [5000, 5000, 1500000, 12000, 12000, 3000, 1500, 3000, 100000, 60000, 750000, 1000000, 750000, 15000, 15000, 35000, 30000, 2000, 600000]
+            },{
+                name: ' Estimated Maximum',
+                data: [7000, 7000, 2500000, 15000, 15000, 5000, 2000, 5000, 150000, 80000, 950000, 1500000, 950000, 20000, 20000, 45000, 50000, 3000, 800000]
+            },{
+                name: ' Sale Price',
+                data: [6875, 8125, 1805000, 35625, 16250, 3750, 3125, 10000, 242500, 134500, 1184500, 2322500, 842500, 18750, 23750, 56250, 37500, 3400, 1082500]
+            }]
+
+});
+
  
     });
     
