@@ -43,9 +43,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Settings</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Profile</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -59,9 +58,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Reports</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Analytics</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Export</a></li>
 <!--           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item</a></li>
@@ -244,6 +243,21 @@
             </table>
           </div>
  -->        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Almost There...</h4>
+          </div>
+          <div class="modal-body">
+            <p>Thanks for your interest in this functionality! <br/>
+              This feature will be launching soon. To stay informed, make sure you sign up for updates.</p>
+          </div>
+        </div>
       </div>
     </div>
 
